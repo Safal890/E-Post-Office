@@ -1,0 +1,22 @@
+{
+    "name": "epostoffice-backend",
+    "version": "1.0.0",
+    "description": "E-Post Office Backend",
+    "main": "server.js",
+    "dependencies": {
+        "body-parser": "^1.20.3",
+        "cors": "^2.8.5",
+        "dotenv": "^16.5.0",
+        "express": "^4.21.2",
+        "mongodb": "^6.15.0",
+        "mongoose": "^8.13.2",
+        "stripe": "^14.25.0"
+    },
+    "scripts": {
+        "start": "node server.js",
+        "dev": "nodemon server.js"
+    },
+    "devDependencies": {
+        "nodemon": "^3.1.9"
+    }
+}
