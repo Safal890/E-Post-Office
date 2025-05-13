@@ -1,0 +1,108 @@
+/* === Track Tabs === */
+.track-tabs {
+    display: flex;
+    border-bottom: 1px solid var(--border-color);
+    margin-bottom: 0;
+    position: relative;
+    z-index: 1;
+  }
+  
+  .track-tab {
+    padding: 12px 24px;
+    border: none;
+    cursor: pointer;
+    border-top-left-radius: var(--radius-sm);
+    border-top-right-radius: var(--radius-sm);
+    margin-right: 10px;
+    font-weight: 500;
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .track-tab::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 0;
+    background-color: rgba(255, 255, 255, 0.1);
+    transition: height 0.3s ease;
+  }
+  
+  .track-tab:hover::before {
+    height: 100%;
+  }
+  
+  .track-tab.active {
+    background-color: var(--primary-color);
+    color: white;
+    transform: translateY(-3px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .track-tab.inactive {
+    background-color: #f5f5f5;
+    color: var(--text-color);
+  }
+  
+  .track-tab.inactive:hover {
+    background-color: #e5e5e5;
+    transform: translateY(-2px);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  }
+  
+  .track-tab::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0;
+    height: 3px;
+    background-color: var(--primary-color);
+    transition: width 0.3s ease, left 0.3s ease;
+  }
+  
+  .track-tab.inactive:hover::after {
+    width: 100%;
+    left: 0;
+  }
+  
+  .track-tab.active::after {
+    width: 100%;
+    left: 0;
+    background-color: white;
+  }
+  
+  .track-content {
+    margin-top: 20px;
+    padding: 24px;
+    background-color: var(--background-card);
+    border-bottom-left-radius: var(--radius-sm);
+    border-bottom-right-radius: var(--radius-sm);
+    border: 1px solid var(--border-color);
+    border-top: none;
+    animation: fadeIn 0.3s ease;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    transform-origin: top center;
+    animation: expandDown 0.4s ease-out forwards;
+  }
+  
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+  
+  @keyframes expandDown {
+    from {
+      opacity: 0;
+      transform: scaleY(0.8);
+    }
+    to {
+      opacity: 1;
+      transform: scaleY(1);
+    }
+  }
+
+  
